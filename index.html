@@ -1,0 +1,130 @@
+<footer style="padding: 60px 5%; background: rgba(0,0,0,0.9); border-top: 1px solid rgba(255,255,255,0.1);">
+    <div class="grid">
+        <div>
+            <strong style="color:var(--accent);">AISOLUTIOS</strong>
+            <p style="font-size: 14px; opacity: 0.7;">Dr. Sidi Weiss<br>Obere Waiblinger Str. 147a<br>70374 Stuttgart</p>
+        </div>
+        <div>
+            <strong id="f-contact">Kontakt</strong>
+            <p style="font-size: 14px; opacity: 0.7;">
+                vertrieb@aisolutios.de<br>
+                00 49 176 31591931
+            </p>
+        </div>
+    </div>
+</footer>
+
+<button id="floating-book-btn" class="floating-btn" style="position: fixed; bottom: 30px; right: 30px; z-index: 2000; background: var(--accent); color: black; border: none; padding: 15px 25px; border-radius: 50px; font-weight: bold; cursor: pointer; box-shadow: 0 10px 30px rgba(0,242,255,0.4);">
+    Termin buchen
+</button>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+<script>
+    const trans = {
+        ar: {
+            mCrew: "فرق الذكاء الاصطناعي", mEvolution: "التطور", mLlm: "نماذج المؤسسات", mStory: "قصتنا", mBook: "حجز موعد",
+            hTitle: "تميز الذكاء الاصطناعي لقادة السوق",
+            hSub: "حلول سيادية للمؤسسات. نحول البنوك والهيئات السياسية إلى رواد رقميين باستخدام وكلاء Crew AI المستقلين.",
+            hBtn: "اكتشف الفرق", hBtn2: "جلسة استراتيجية",
+            kiTitle: "وكلاء <span>و طواقم</span> الذكاء الاصطناعي",
+            avLoading: "جاري الاتصال بخبير الذكاء الاصطناعي...",
+            avConsultantH: "مستشار مباشر: د. سيدي ويس (ذكاء اصطناعي)",
+            avConsultantP: "تحدث مع وكيلي التفاعلي حول أتمتة استقطاب العملاء للبنوك وجذب الأعضاء للأحزاب السياسية.",
+            avBtnStart: "بدء المحادثة ←",
+            
+            // Banking, Sales & Politics Crews
+            c1H: "طاقم المبيعات والاستقطاب", c1P: "أتمتة كاملة لجلب العملاء المحتملين وإدارة الحملات الانتخابية رقمياً.",
+            c2H: "طاقم البنوك والتمويل", c2P: "وكلاء متخصصون في فحص المخاطر، الائتمان، وأتمتة العمليات المصرفية المعقدة.",
+            c3H: "طاقم العمل السياسي", c3P: "حلول مبتكرة لجذب الأعضاء، تحليل آراء الناخبين، وأتمتة التواصل السياسي الشخصي.",
+            
+            evTitle: "التطور: من الذكاء الاصطناعي التوليدي إلى <span>الوكلاء المستقلين</span>",
+            llmTitle: "سيادة <span>المؤسسات</span>",
+            stTitle: "من رحاب الصحراء إلى <span>رؤية الذكاء الاصطناعي</span>",
+            stP: "بدأت الرحلة من موريتانيا إلى ألمانيا. د. ويس مهندس استراتيجيات الذكاء الاصطناعي للشركات الكبرى والأحزاب السياسية.",
+            tmTitle: "فريق <span>الخبراء</span>",
+            bkTitle: "احجز جلسة استراتيجية",
+            fContact: "اتصل بنا",
+            floatBtn: "احجز الآن",
+            t1r: "الرئيس التنفيذي والمبتكر", t1p: "المهندس المعماري لفرق الوكلاء المستقلين.",
+            t2r: "مدير العمليات", t2p: "العمود الفقري التنظيمي.",
+            t3r: "خبير الخوارزميات", t3p: "سيد العمليات التقنية."
+        },
+        fr: {
+            mCrew: "Crews IA", mEvolution: "Évolution", mLlm: "LLM Entreprise", mStory: "Histoire", mBook: "Réservation",
+            hTitle: "Excellence IA pour les Leaders",
+            hSub: "Solutions souveraines. Nous transformons banques et partis politiques en pionniers grâce aux agents autonomes Crew AI.",
+            hBtn: "Découvrir les Crews", hBtn2: "Session Stratégique",
+            kiTitle: "Agents IA <span>& Crews</span>",
+            avLoading: "Connexion en cours...",
+            avConsultantH: "Consultant IA Live: Dr. Sidi Weiss (AI)",
+            avConsultantP: "Discutez de l'automatisation de l'acquisition de clients bancaires et du recrutement de membres politiques.",
+            avBtnStart: "Démarrer →",
+            
+            c1H: "Crew Ventes & Acquisition", c1P: "Solution end-to-end : génération de leads bancaires et campagnes de prospection automatisées.",
+            c2H: "Crew Banque & Finance", c2P: "Agents spécialisés dans l'analyse de risques et l'automatisation des dossiers de crédit.",
+            c3H: "Crew Politique & Engagement", c3P: "Recrutement automatisé de membres et analyse prédictive des tendances électorales.",
+            
+            evTitle: "L'Évolution : De la GenAI vers <span>l'IA Agentique</span>",
+            llmTitle: "Souveraineté <span>Entreprise</span>",
+            stTitle: "Du désert au <span>visionnaire de l'IA</span>",
+            stP: "De la Mauritanie à l'Allemagne. Le Dr. Weiss conçoit des stratégies IA pour les grands groupes et organisations politiques.",
+            tmTitle: "L'équipe <span>d'experts</span>",
+            bkTitle: "Réserver Session",
+            fContact: "Contact",
+            floatBtn: "Réserver",
+            t1r: "CEO & Inventeur", t1p: "Architecte des crews d'agents autonomes.",
+            t2r: "Directeur Opérationnel", t2p: "Le pilier organisationnel.",
+            t3r: "Expert IA", t3p: "Maître des algorithmes."
+        }
+    };
+
+    function setLanguage(l) {
+        const lang = l.toLowerCase().trim();
+        const s = trans[lang] || trans['ar']; // Standardmäßig Arabisch oder Deutsch möglich
+
+        // RTL Support für Arabisch
+        document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        document.body.style.textAlign = (lang === 'ar') ? 'right' : 'left';
+
+        const update = (id, val, isHtml = false) => {
+            const el = document.getElementById(id);
+            if (el) isHtml ? el.innerHTML = val : el.innerText = val;
+        };
+
+        // Navigation & Content Update
+        update('m-crew', s.mCrew); update('m-evolution', s.mEvolution);
+        update('m-llm', s.mLlm); update('m-story', s.mStory); update('m-book', s.mBook);
+        update('h-title', s.hTitle); update('h-sub', s.hSub);
+        update('ki-title', s.kiTitle, true);
+        update('av-consultant-h', s.avConsultantH);
+        update('av-consultant-p', s.avConsultantP);
+        update('av-btn-start', s.avBtnStart);
+        update('c1-h', s.c1H); update('c1-p', s.c1P);
+        update('c2-h', s.c2H); update('c2-p', s.c2P);
+        update('c3-h', s.c3H); update('c3-p', s.c3P);
+        update('st-title', s.stTitle, true);
+        update('st-p', s.stP);
+        update('tm-title', s.tmTitle, true);
+        update('bk-title', s.bkTitle);
+        update('f-contact', s.fContact);
+        update('floating-book-btn', s.floatBtn);
+        update('t1-p', s.t1p); update('t2-p', s.t2p); update('t4-p', s.t3p);
+
+        localStorage.setItem('selectedLang', lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const saved = localStorage.getItem('selectedLang') || 'ar';
+        setLanguage(saved);
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.onclick = function() { setLanguage(this.innerText); };
+        });
+
+        const floatBtn = document.getElementById('floating-book-btn');
+        if (floatBtn) floatBtn.onclick = () => document.getElementById('booking').scrollIntoView({behavior: 'smooth'});
+    });
+</script>
+</body>
+</html>
