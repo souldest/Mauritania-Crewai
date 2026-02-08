@@ -33,7 +33,7 @@
         .lang-btn { background: none; border: 1px solid var(--accent); color: var(--accent); padding: 5px 15px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
         .lang-btn.active { background: var(--accent); color: black; }
 
-        /* Hero Section */
+        /* Hero */
         .hero { 
             height: 85vh; display: flex; flex-direction: column; justify-content: center; 
             align-items: center; text-align: center; padding: 0 5%;
@@ -54,14 +54,14 @@
         .advantages { background: #080808; padding: 100px 5%; border-top: 1px solid rgba(255,255,255,0.05); }
         .adv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
         .adv-card { 
-            padding: 40px; border-radius: 12px; background: rgba(255,255,255,0.02); 
+            padding: 40px; border-radius: 12px; background: rgba(255, 255, 255, 0.02); 
             border-left: 4px solid var(--accent); transition: 0.3s;
         }
-        .adv-card:hover { background: rgba(255,255,255,0.05); transform: translateX(10px); }
+        .adv-card:hover { background: rgba(255, 255, 255, 0.05); transform: translateX(10px); }
         .adv-card h4 { color: var(--accent); font-size: 1.4rem; margin-bottom: 15px; text-transform: uppercase; }
         .adv-card p { opacity: 0.7; font-size: 1.1rem; font-weight: 300; }
 
-        /* Standard Sections */
+        /* Sections */
         section { padding: 100px 5%; max-width: 1400px; margin: 0 auto; }
         .section-title { text-align: center; margin-bottom: 60px; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
@@ -73,6 +73,11 @@
         .card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 10px 40px var(--glow); }
 
         .expert-box { background: rgba(255,255,255,0.02); border-radius: 20px; padding: 60px; border: 1px solid rgba(255,255,255,0.05); text-align: center; }
+
+        /* Calendly Fallback Styling */
+        .calendly-fallback {
+            text-align: center; padding: 40px; border: 1px dashed var(--accent); border-radius: 10px; margin-top: 20px;
+        }
 
         /* Footer */
         footer { padding: 80px 5%; background: #000; border-top: 1px solid rgba(255,255,255,0.1); }
@@ -108,7 +113,7 @@
 
     <section class="hero">
         <h1 id="h-title">Architectures d'Agents IA <span>Souveraines</span></h1>
-        <p id="h-sub">Dr. Sidi Weiss – Architecte de solutions cognitives. Nous déployons des "AI Crews" autonomes pour la haute finance et les institutions stratégiques.</p>
+        <p id="h-sub">Dr. Sidi Weiss – Architecte de solutions cognitives. Nous déployons des "AI Crews" autonomes pour les institutions financières et stratégiques.</p>
         <a onclick="scrollToSection('booking')" class="btn" id="h-btn">Session Stratégique</a>
     </section>
 
@@ -117,19 +122,19 @@
         <div class="adv-grid">
             <div class="adv-card">
                 <h4 id="adv1-h">Autonomie Cognitive</h4>
-                <p id="adv1-p">Nos agents raisonnent et exécutent des missions complexes de bout en bout, sans intervention humaine constante. Une efficacité 24h/24.</p>
+                <p id="adv1-p">Nos agents exécutent des missions complexes de bout en bout, sans intervention humaine constante. Efficacité garantie 24h/24.</p>
             </div>
             <div class="adv-card">
                 <h4 id="adv2-h">Souveraineté des Données</h4>
-                <p id="adv2-p">Solutions On-Premise garantissant que vos données sensibles ne quittent jamais votre infrastructure. Sécurité absolue pour banques et politique.</p>
+                <p id="adv2-p">Solutions On-Premise : vos données sensibles ne quittent jamais votre infrastructure. Sécurité absolue pour banques et politique.</p>
             </div>
             <div class="adv-card">
                 <h4 id="adv3-h">ROI Immédiat</h4>
-                <p id="adv3-p">Réduction drastique des coûts opérationnels et élimination de l'erreur humaine dans les processus d'analyse de données massives.</p>
+                <p id="adv3-p">Réduction drastique des coûts opérationnels et élimination de l'erreur humaine dans les processus analytiques critiques.</p>
             </div>
             <div class="adv-card">
                 <h4 id="adv4-h">Expertise Scientifique</h4>
-                <p id="adv4-p">Conçu par le Dr. Sidi Weiss. Des architectures basées sur la rigueur mathématique et les dernières percées en systèmes multi-agents.</p>
+                <p id="adv4-p">Architectures conçues par le Dr. Sidi Weiss, basées sur la rigueur mathématique et les systèmes multi-agents avancés.</p>
             </div>
         </div>
     </section>
@@ -147,7 +152,7 @@
             </div>
             <div class="card">
                 <h3 id="c3-h">Gouvernance & Politique</h3>
-                <p id="c3-p">Analyses prédictives et gestion de campagnes basées sur des données souveraines et sécurisées.</p>
+                <p id="c3-p">Analyses prédictives et gestion de campagnes basées sur des données souveraines et hautement sécurisées.</p>
             </div>
         </div>
     </section>
@@ -163,7 +168,17 @@
 
     <section id="booking">
         <h2 class="section-title" id="bk-title">Prendre l'Avantage Technologique</h2>
-        <div class="calendly-inline-widget" data-url="https://calendly.com/vertrieb-aisolutios/new-meeting-1" style="min-width:320px;height:750px;"></div>
+        
+        <div class="calendly-inline-widget" 
+             data-url="https://calendly.com/vertrieb-aisolutios/new-meeting-1" 
+             style="min-width:320px; height:750px;" 
+             id="calendly-widget">
+        </div>
+
+        <div id="calendly-fallback-link" class="calendly-fallback" style="display:none;">
+            <p style="margin-bottom:20px;">Le module de réservation est bloqué par votre navigateur.</p>
+            <a href="https://calendly.com/vertrieb-aisolutios/new-meeting-1" target="_blank" class="btn">Ouvrir le calendrier direct</a>
+        </div>
     </section>
 
     <footer>
@@ -185,21 +200,22 @@
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
     <script>
+        // Language Translations
         const trans = {
             ar: {
                 mAdv: "المزايا", mCrew: "طواقم العمل", mStory: "الخبير", mBook: "حجز موعد",
                 hTitle: "بنية وكلاء الذكاء الاصطناعي <span>السيادية</span>",
-                hSub: "د. سيدي ويس – مهندس الحلول الإدراكية. ننشر طواقم ذكاء اصطناعي مستقلة للتمويل العالي والمؤسسات الاستراتيجية.",
+                hSub: "د. سيدي ويس – مهندس الحلول الإدراكية. ننشر طواقم ذكاء اصطناعي مستقلة للمؤسسات المالية والاستراتيجية.",
                 hBtn: "جلسة استراتيجية",
                 advTitle: "لماذا تختار <span>طواقمنا؟</span>",
                 adv1H: "استقلالية معرفية",
-                adv1P: "وكلاؤنا يفكرون وينفذون المهام المعقدة من البداية إلى النهاية دون حاجة لإشراف بشري دائم. كفاءة على مدار الساعة.",
+                adv1P: "وكلاؤنا ينفذون المهام المعقدة من البداية إلى النهاية دون حاجة لإشراف بشري دائم. كفاءة 24/7.",
                 adv2H: "سيادة البيانات",
-                adv2P: "حلول داخلية (On-Premise) تضمن عدم خروج بياناتكم الحساسة من بنيتكم التحتية. أمان مطلق للبنوك والسياسة.",
+                adv2P: "حلول داخلية تضمن عدم خروج بياناتكم الحساسة من بنيتكم التحتية. أمان مطلق للبنوك والسياسة.",
                 adv3H: "عائد فوري",
-                adv3P: "خفض هائل في التكاليف التشغيلية وإلغاء الأخطاء البشرية في عمليات تحليل البيانات الضخمة.",
+                adv3P: "خفض هائل في التكاليف التشغيلية وإلغاء الأخطاء البشرية في العمليات التحليلية الحرجة.",
                 adv4H: "خبرة علمية",
-                adv4P: "تصميم الدكتور سيدي ويس. بنيات تعتمد على الدقة الرياضية وأحدث الأبحاث في الأنظمة متعددة الوكلاء.",
+                adv4P: "تصميم الدكتور سيدي ويس. بنيات تعتمد على الدقة الرياضية وأحدث أبحاث الأنظمة متعددة الوكلاء.",
                 kiTitle: "الحلول <span>الذكية</span>",
                 c1H: "طواقم المبيعات", c1P: "أتمتة دورات المبيعات بالكامل: من التنقيب الاستراتيجي إلى تأهيل العملاء عبر وكلاء متخصصين.",
                 c2H: "المالية والامتثال", c2P: "أتمتة إجراءات KYC/AML والامتثال التنظيمي بدقة جراحية.",
@@ -215,11 +231,11 @@
                 hBtn: "Session Stratégique",
                 advTitle: "Pourquoi choisir nos <span>Crews IA ?</span>",
                 adv1H: "Autonomie Cognitive",
-                adv1P: "Nos agents raisonnent et exécutent des missions complexes sans intervention constante. Efficacité 24h/24.",
+                adv1P: "Nos agents exécutent des missions complexes sans intervention humaine constante. Efficacité 24h/24.",
                 adv2H: "Souveraineté des Données",
                 adv2P: "Solutions On-Premise. Vos données sensibles ne quittent jamais votre infrastructure. Sécurité absolue.",
                 adv3H: "ROI Immédiat",
-                adv3P: "Réduction des coûts et élimination de l'erreur humaine dans les processus d'analyse massives.",
+                adv3P: "Réduction des coûts et élimination de l'erreur humaine dans les processus analytiques critiques.",
                 adv4H: "Expertise Scientifique",
                 adv4P: "Conçu par le Dr. Sidi Weiss. Précision mathématique basée sur le raisonnement multi-agents.",
                 kiTitle: "Solutions <span>Agentiques</span>",
@@ -275,6 +291,14 @@
             const el = document.getElementById(id);
             if (el) window.scrollTo({ top: el.offsetTop - 90, behavior: 'smooth' });
         }
+
+        // Calendly Check (Falls das Widget nach 3 Sekunden nicht lädt, Fallback anzeigen)
+        setTimeout(() => {
+            const widget = document.getElementById('calendly-widget');
+            if (widget && widget.innerHTML.trim() === "") {
+                document.getElementById('calendly-fallback-link').style.display = 'block';
+            }
+        }, 3000);
 
         window.onload = () => {
             const saved = localStorage.getItem('ais_lang') || 'fr';
