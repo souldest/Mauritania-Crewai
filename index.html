@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Sidi Weiss | AI Agent Crews - Architecte Souverain</title>
+    <title>Dr. Sidi Weiss | AI Agent Crews & Digital Infrastructure</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -26,11 +26,11 @@
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         .logo { font-size: 1.4rem; font-weight: 800; letter-spacing: 2px; color: var(--accent); text-decoration: none; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { color: white; text-decoration: none; font-weight: 500; cursor: pointer; transition: 0.3s; opacity: 0.8; }
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; cursor: pointer; transition: 0.3s; opacity: 0.8; font-size: 0.9rem; }
         .nav-links a:hover { color: var(--accent); opacity: 1; }
         .lang-switcher { display: flex; gap: 10px; }
-        .lang-btn { background: none; border: 1px solid var(--accent); color: var(--accent); padding: 5px 15px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
+        .lang-btn { background: none; border: 1px solid var(--accent); color: var(--accent); padding: 5px 12px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.75rem; }
         .lang-btn.active { background: var(--accent); color: black; }
 
         /* Hero */
@@ -44,40 +44,31 @@
         .hero p { max-width: 900px; font-size: 1.4rem; opacity: 0.8; margin-bottom: 40px; font-weight: 300; }
         
         .btn { 
-            background: var(--accent); color: black; padding: 20px 45px; border-radius: 5px; 
+            background: var(--accent); color: black; padding: 18px 40px; border-radius: 5px; 
             text-decoration: none; font-weight: bold; transition: 0.4s; display: inline-block; 
             cursor: pointer; border: none; text-transform: uppercase; letter-spacing: 1px;
         }
         .btn:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(0,242,255,0.4); }
 
-        /* AI Advantages */
-        .advantages { background: #080808; padding: 100px 5%; border-top: 1px solid rgba(255,255,255,0.05); }
-        .adv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .adv-card { 
-            padding: 40px; border-radius: 12px; background: rgba(255, 255, 255, 0.02); 
-            border-left: 4px solid var(--accent); transition: 0.3s;
-        }
-        .adv-card:hover { background: rgba(255, 255, 255, 0.05); transform: translateX(10px); }
-        .adv-card h4 { color: var(--accent); font-size: 1.4rem; margin-bottom: 15px; text-transform: uppercase; }
-        .adv-card p { opacity: 0.7; font-size: 1.1rem; font-weight: 300; }
-
-        /* Sections */
+        /* Grid System */
         section { padding: 100px 5%; max-width: 1400px; margin: 0 auto; }
         .section-title { text-align: center; margin-bottom: 60px; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         
         .card { 
-            background: var(--card-bg); padding: 50px; border-radius: 10px; 
+            background: var(--card-bg); padding: 40px; border-radius: 12px; 
             border: 1px solid rgba(255,255,255,0.05); transition: 0.4s;
+            position: relative; overflow: hidden;
         }
-        .card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 10px 40px var(--glow); }
+        .card:hover { border-color: var(--accent); transform: translateY(-5px); box-shadow: 0 10px 40px var(--glow); }
+        .card h3 { color: var(--accent); margin-bottom: 15px; font-size: 1.5rem; }
 
+        /* Infrastructure Section Special Style */
+        .infra-section { background: #080808; border-radius: 20px; padding: 60px 40px; margin: 40px auto; border: 1px solid rgba(0,242,255,0.1); }
+        .infra-badge { display: inline-block; padding: 5px 15px; background: rgba(0,242,255,0.1); color: var(--accent); border-radius: 20px; font-size: 0.8rem; margin-bottom: 20px; font-weight: bold; }
+
+        /* Expert Box */
         .expert-box { background: rgba(255,255,255,0.02); border-radius: 20px; padding: 60px; border: 1px solid rgba(255,255,255,0.05); text-align: center; }
-
-        /* Calendly Fallback Styling */
-        .calendly-fallback {
-            text-align: center; padding: 40px; border: 1px dashed var(--accent); border-radius: 10px; margin-top: 20px;
-        }
 
         /* Footer */
         footer { padding: 80px 5%; background: #000; border-top: 1px solid rgba(255,255,255,0.1); }
@@ -88,10 +79,9 @@
             box-shadow: 0 10px 30px rgba(0,242,255,0.4);
         }
 
-        /* RTL */
+        /* RTL Support */
         [dir="rtl"] { text-align: right; }
         [dir="rtl"] .nav-links { flex-direction: row-reverse; }
-        [dir="rtl"] .adv-card { border-left: none; border-right: 4px solid var(--accent); }
         [dir="rtl"] .floating-btn { right: auto; left: 30px; }
     </style>
 </head>
@@ -100,8 +90,8 @@
     <nav>
         <a href="#" class="logo">AISOLUTIOS</a>
         <div class="nav-links">
-            <a id="m-adv" onclick="scrollToSection('adv')">Avantages</a>
             <a id="m-crew" onclick="scrollToSection('agents')">Crews IA</a>
+            <a id="m-web" onclick="scrollToSection('web')">Web & Hosting</a>
             <a id="m-story" onclick="scrollToSection('story')">Expertise</a>
             <a id="m-book" onclick="scrollToSection('booking')">Booking</a>
         </div>
@@ -112,31 +102,9 @@
     </nav>
 
     <section class="hero">
-        <h1 id="h-title">Architectures d'Agents IA <span>Souveraines</span></h1>
-        <p id="h-sub">Dr. Sidi Weiss – Architecte de solutions cognitives. Nous déployons des "AI Crews" autonomes pour les institutions financières et stratégiques.</p>
+        <h1 id="h-title">IA & Espace <span>Numérique</span> Souverain</h1>
+        <p id="h-sub">Dr. Sidi Weiss – Excellence en IA Agentique et Infrastructures Web de Haute Sécurité.</p>
         <a onclick="scrollToSection('booking')" class="btn" id="h-btn">Session Stratégique</a>
-    </section>
-
-    <section id="adv" class="advantages">
-        <h2 class="section-title" id="adv-title">Pourquoi choisir nos <span>Crews IA ?</span></h2>
-        <div class="adv-grid">
-            <div class="adv-card">
-                <h4 id="adv1-h">Autonomie Cognitive</h4>
-                <p id="adv1-p">Nos agents exécutent des missions complexes de bout en bout, sans intervention humaine constante. Efficacité garantie 24h/24.</p>
-            </div>
-            <div class="adv-card">
-                <h4 id="adv2-h">Souveraineté des Données</h4>
-                <p id="adv2-p">Solutions On-Premise : vos données sensibles ne quittent jamais votre infrastructure. Sécurité absolue pour banques et politique.</p>
-            </div>
-            <div class="adv-card">
-                <h4 id="adv3-h">ROI Immédiat</h4>
-                <p id="adv3-p">Réduction drastique des coûts opérationnels et élimination de l'erreur humaine dans les processus analytiques critiques.</p>
-            </div>
-            <div class="adv-card">
-                <h4 id="adv4-h">Expertise Scientifique</h4>
-                <p id="adv4-p">Architectures conçues par le Dr. Sidi Weiss, basées sur la rigueur mathématique et les systèmes multi-agents avancés.</p>
-            </div>
-        </div>
     </section>
 
     <section id="agents">
@@ -157,28 +125,41 @@
         </div>
     </section>
 
+    <section id="web">
+        <div class="infra-section">
+            <h2 class="section-title" id="web-title">Infrastructure <span>Web 360°</span></h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="infra-badge">Development</span>
+                    <h3 id="w1-h">Sites Web Premium</h3>
+                    <p id="w1-p">De la landing page haute conversion au portail institutionnel complexe. Design moderne et performance SEO optimisée.</p>
+                </div>
+                <div class="card">
+                    <span class="infra-badge">Identity</span>
+                    <h3 id="w2-h">Gestion de Domaines</h3>
+                    <p id="w2-p">Acquisition et gestion sécurisée de vos noms de domaine. Protection de marque et configuration DNS professionnelle.</p>
+                </div>
+                <div class="card">
+                    <span class="infra-badge">Performance</span>
+                    <h3 id="w3-h">Hosting Souverain</h3>
+                    <p id="w3-p">Hébergement haute disponibilité sur serveurs sécurisés. Idéal pour les applications exigeant une protection de données stricte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="story">
         <div class="expert-box">
-            <h2 id="st-title">Dr. Sidi Weiss – <span>Visionnaire IA</span></h2>
+            <h2 id="st-title">Dr. Sidi Weiss – <span>Visionnaire</span></h2>
             <p id="st-p" style="font-size: 1.3rem; opacity: 0.9; margin-top: 30px; font-weight: 300;">
-                En tant que Docteur et expert en IA, je transforme la complexité technologique en levier de puissance souveraine pour les organisations d'élite.
+                En tant que Docteur et expert en IA, je fournis une base technologique complète : de l'infrastructure web robuste à l'intelligence artificielle la plus avancée.
             </p>
         </div>
     </section>
 
     <section id="booking">
         <h2 class="section-title" id="bk-title">Prendre l'Avantage Technologique</h2>
-        
-        <div class="calendly-inline-widget" 
-             data-url="https://calendly.com/vertrieb-aisolutios/new-meeting-1" 
-             style="min-width:320px; height:750px;" 
-             id="calendly-widget">
-        </div>
-
-        <div id="calendly-fallback-link" class="calendly-fallback" style="display:none;">
-            <p style="margin-bottom:20px;">Le module de réservation est bloqué par votre navigateur.</p>
-            <a href="https://calendly.com/vertrieb-aisolutios/new-meeting-1" target="_blank" class="btn">Ouvrir le calendrier direct</a>
-        </div>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/vertrieb-aisolutios/new-meeting-1" style="min-width:320px;height:750px;"></div>
     </section>
 
     <footer>
@@ -200,50 +181,39 @@
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
     <script>
-        // Language Translations
         const trans = {
             ar: {
-                mAdv: "المزايا", mCrew: "طواقم العمل", mStory: "الخبير", mBook: "حجز موعد",
-                hTitle: "بنية وكلاء الذكاء الاصطناعي <span>السيادية</span>",
-                hSub: "د. سيدي ويس – مهندس الحلول الإدراكية. ننشر طواقم ذكاء اصطناعي مستقلة للمؤسسات المالية والاستراتيجية.",
+                mCrew: "طواقم IA", mWeb: "مواقع واستضافة", mStory: "الخبرة", mBook: "حجز",
+                hTitle: "الذكاء الاصطناعي و<span>البنية الرقمية</span> السيادية",
+                hSub: "د. سيدي ويس – التميز في وكلاء الذكاء الاصطناعي والبنية التحتية للويب عالية الأمان.",
                 hBtn: "جلسة استراتيجية",
-                advTitle: "لماذا تختار <span>طواقمنا؟</span>",
-                adv1H: "استقلالية معرفية",
-                adv1P: "وكلاؤنا ينفذون المهام المعقدة من البداية إلى النهاية دون حاجة لإشراف بشري دائم. كفاءة 24/7.",
-                adv2H: "سيادة البيانات",
-                adv2P: "حلول داخلية تضمن عدم خروج بياناتكم الحساسة من بنيتكم التحتية. أمان مطلق للبنوك والسياسة.",
-                adv3H: "عائد فوري",
-                adv3P: "خفض هائل في التكاليف التشغيلية وإلغاء الأخطاء البشرية في العمليات التحليلية الحرجة.",
-                adv4H: "خبرة علمية",
-                adv4P: "تصميم الدكتور سيدي ويس. بنيات تعتمد على الدقة الرياضية وأحدث أبحاث الأنظمة متعددة الوكلاء.",
-                kiTitle: "الحلول <span>الذكية</span>",
-                c1H: "طواقم المبيعات", c1P: "أتمتة دورات المبيعات بالكامل: من التنقيب الاستراتيجي إلى تأهيل العملاء عبر وكلاء متخصصين.",
+                kiTitle: "حلول <span>الوكلاء</span>",
+                c1H: "طواقم المبيعات", c1P: "أتمتة دورات المبيعات بالكامل من التنقيب إلى التأهيل عبر وكلاء متخصصين.",
                 c2H: "المالية والامتثال", c2P: "أتمتة إجراءات KYC/AML والامتثال التنظيمي بدقة جراحية.",
                 c3H: "الحوكمة والسياسة", c3P: "تحليلات تنبؤية وإدارة حملات تعتمد على بيانات سيادية وآمنة تماماً.",
+                webTitle: "بنية <span>الويب الشاملة</span>",
+                w1H: "مواقع ويب متميزة", w1P: "من صفحات الهبوط عالية التحويل إلى البوابات المؤسسية المعقدة بتصميم عصري.",
+                w2H: "إدارة النطاقات", w2P: "حجز وإدارة أسماء النطاقات بشكل آمن وحماية العلامة التجارية.",
+                w3H: "استضافة سيادية", w3P: "استضافة عالية الأداء على خوادم مؤمنة، مثالية للبيانات الحساسة.",
                 stTitle: "د. سيدي ويس – <span>رؤية رائدة</span>",
-                stP: "بصفتي دكتوراً وخبيراً في الذكاء الاصطناعي، أحوّل التعقيد التكنولوجي إلى أداة قوة سيادية للمنظمات النخبوية.",
+                stP: "بصفتي دكتوراً وخبيراً، أوفر قاعدة تكنولوجية كاملة: من بنية الويب القوية إلى أحدث أنظمة الذكاء الاصطناعي.",
                 bkTitle: "احصل على الأفضلية التقنية", fContact: "اتصال مباشر", floatBtn: "احجز الآن"
             },
             fr: {
-                mAdv: "Avantages", mCrew: "Crews IA", mStory: "Expertise", mBook: "Booking",
-                hTitle: "Architectures d'Agents IA <span>Souveraines</span>",
-                hSub: "Dr. Sidi Weiss – Architecte de solutions cognitives. Nous déployons des 'AI Crews' autonomes pour la finance et la politique.",
+                mCrew: "Crews IA", mWeb: "Web & Hosting", mStory: "Expertise", mBook: "Booking",
+                hTitle: "IA & Espace <span>Numérique</span> Souverain",
+                hSub: "Dr. Sidi Weiss – Excellence en IA Agentique et Infrastructures Web de Haute Sécurité.",
                 hBtn: "Session Stratégique",
-                advTitle: "Pourquoi choisir nos <span>Crews IA ?</span>",
-                adv1H: "Autonomie Cognitive",
-                adv1P: "Nos agents exécutent des missions complexes sans intervention humaine constante. Efficacité 24h/24.",
-                adv2H: "Souveraineté des Données",
-                adv2P: "Solutions On-Premise. Vos données sensibles ne quittent jamais votre infrastructure. Sécurité absolue.",
-                adv3H: "ROI Immédiat",
-                adv3P: "Réduction des coûts et élimination de l'erreur humaine dans les processus analytiques critiques.",
-                adv4H: "Expertise Scientifique",
-                adv4P: "Conçu par le Dr. Sidi Weiss. Précision mathématique basée sur le raisonnement multi-agents.",
                 kiTitle: "Solutions <span>Agentiques</span>",
-                c1H: "Crews de Vente", c1P: "Cycles de vente automatisés : de la prospection à la qualification de leads par agents spécialisés.",
-                c2H: "Finance & Compliance", c2P: "Vérifications KYC/AML et conformité réglementaire automatisées avec précision.",
+                c1H: "Crews de Vente", c1P: "Cycles de vente automatisés : de la prospection à la qualification de leads par agents.",
+                c2H: "Finance & Compliance", c2P: "Vérifications KYC/AML et conformité réglementaire automatisées.",
                 c3H: "Gouvernance & Politique", c3P: "Analyses prédictives et gestion de campagnes basées sur des données souveraines.",
-                stTitle: "Dr. Sidi Weiss – <span>Visionnaire IA</span>",
-                stP: "Je transforme la complexité technologique en levier de puissance souveraine pour les organisations.",
+                webTitle: "Infrastructure <span>Web 360°</span>",
+                w1H: "Sites Web Premium", w1P: "Du design haute conversion aux portails complexes. Performance SEO optimisée.",
+                w2H: "Gestion de Domaines", w2P: "Acquisition et gestion sécurisée de vos noms de domaine et DNS.",
+                w3H: "Hosting Souverain", w3P: "Hébergement haute disponibilité sur serveurs sécurisés pour données sensibles.",
+                stTitle: "Dr. Sidi Weiss – <span>Visionnaire</span>",
+                stP: "Je fournis une base technologique complète : de l'infrastructure web robuste à l'IA la plus avancée.",
                 bkTitle: "Prendre l'Avantage Technologique", fContact: "Contact Direct", floatBtn: "Réserver"
             }
         };
@@ -252,22 +222,13 @@
             const l = lang.toLowerCase();
             const s = trans[l];
             document.body.dir = (l === 'ar') ? 'rtl' : 'ltr';
-            document.getElementById('m-adv').innerText = s.mAdv;
             document.getElementById('m-crew').innerText = s.mCrew;
+            document.getElementById('m-web').innerText = s.mWeb;
             document.getElementById('m-story').innerText = s.mStory;
             document.getElementById('m-book').innerText = s.mBook;
             document.getElementById('h-title').innerHTML = s.hTitle;
             document.getElementById('h-sub').innerText = s.hSub;
             document.getElementById('h-btn').innerText = s.hBtn;
-            document.getElementById('adv-title').innerHTML = s.advTitle;
-            document.getElementById('adv1-h').innerText = s.adv1H;
-            document.getElementById('adv1-p').innerText = s.adv1P;
-            document.getElementById('adv2-h').innerText = s.adv2H;
-            document.getElementById('adv2-p').innerText = s.adv2P;
-            document.getElementById('adv3-h').innerText = s.adv3H;
-            document.getElementById('adv3-p').innerText = s.adv3P;
-            document.getElementById('adv4-h').innerText = s.adv4H;
-            document.getElementById('adv4-p').innerText = s.adv4P;
             document.getElementById('ki-title').innerHTML = s.kiTitle;
             document.getElementById('c1-h').innerText = s.c1H;
             document.getElementById('c1-p').innerText = s.c1P;
@@ -275,6 +236,13 @@
             document.getElementById('c2-p').innerText = s.c2P;
             document.getElementById('c3-h').innerText = s.c3H;
             document.getElementById('c3-p').innerText = s.c3P;
+            document.getElementById('web-title').innerHTML = s.webTitle;
+            document.getElementById('w1-h').innerText = s.w1H;
+            document.getElementById('w1-p').innerText = s.w1P;
+            document.getElementById('w2-h').innerText = s.w2H;
+            document.getElementById('w2-p').innerText = s.w2P;
+            document.getElementById('w3-h').innerText = s.w3H;
+            document.getElementById('w3-p').innerText = s.w3P;
             document.getElementById('st-title').innerHTML = s.stTitle;
             document.getElementById('st-p').innerText = s.stP;
             document.getElementById('bk-title').innerText = s.bkTitle;
@@ -291,14 +259,6 @@
             const el = document.getElementById(id);
             if (el) window.scrollTo({ top: el.offsetTop - 90, behavior: 'smooth' });
         }
-
-        // Calendly Check (Falls das Widget nach 3 Sekunden nicht lädt, Fallback anzeigen)
-        setTimeout(() => {
-            const widget = document.getElementById('calendly-widget');
-            if (widget && widget.innerHTML.trim() === "") {
-                document.getElementById('calendly-fallback-link').style.display = 'block';
-            }
-        }, 3000);
 
         window.onload = () => {
             const saved = localStorage.getItem('ais_lang') || 'fr';
