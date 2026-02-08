@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Sidi Weiss | AI Agent Crews - Banking & Politics</title>
+    <title>Dr. Sidi Weiss | AI Agent Crews - Sovereign Architect</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #050505;
             --accent: #00f2ff;
+            --accent-dark: #0088ff;
             --text: #ffffff;
-            --card-bg: rgba(255, 255, 255, 0.05);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --glow: rgba(0, 242, 255, 0.15);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; transition: all 0.3s ease; }
+        body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
 
         /* Navigation */
         nav { 
@@ -22,46 +25,60 @@
             background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
+        .logo { font-size: 1.4rem; font-weight: 800; letter-spacing: 2px; color: var(--accent); }
         .nav-links { display: flex; gap: 30px; }
-        .nav-links a { color: white; text-decoration: none; font-weight: 500; cursor: pointer; transition: 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
+        .nav-links a { color: white; text-decoration: none; font-weight: 500; cursor: pointer; transition: 0.3s; opacity: 0.8; }
+        .nav-links a:hover { color: var(--accent); opacity: 1; }
         .lang-switcher { display: flex; gap: 10px; }
-        .lang-btn { background: none; border: 1px solid var(--accent); color: var(--accent); padding: 5px 15px; cursor: pointer; border-radius: 4px; font-weight: bold; }
+        .lang-btn { background: none; border: 1px solid var(--accent); color: var(--accent); padding: 5px 15px; cursor: pointer; border-radius: 4px; font-weight: bold; font-size: 0.8rem; }
         .lang-btn.active { background: var(--accent); color: black; }
 
         /* Hero */
         .hero { 
-            height: 100vh; display: flex; flex-direction: column; justify-content: center; 
+            height: 90vh; display: flex; flex-direction: column; justify-content: center; 
             align-items: center; text-align: center; padding: 0 5%;
             background: radial-gradient(circle at center, #111 0%, #050505 100%);
         }
-        h1 { font-size: clamp(2.2rem, 7vw, 4.5rem); line-height: 1.1; margin-bottom: 20px; }
-        h1 span { color: var(--accent); }
-        .hero p { max-width: 850px; font-size: 1.2rem; opacity: 0.8; margin-bottom: 40px; }
-        .btn { background: var(--accent); color: black; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block; cursor: pointer; }
-        .btn:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(0,242,255,0.4); }
-
-        /* Sections */
-        section { padding: 100px 5%; }
-        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; }
-        .section-title span { color: var(--accent); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: var(--card-bg); padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
-        .card:hover { border-color: var(--accent); transform: translateY(-10px); background: rgba(0, 242, 255, 0.02); }
-        .card h3 { color: var(--accent); margin-bottom: 15px; font-size: 1.5rem; }
-
-        /* RTL Specifics */
-        [dir="rtl"] .nav-links { flex-direction: row-reverse; }
-        [dir="rtl"] .card { text-align: right; }
-
-        /* Footer */
-        footer { padding: 60px 5%; background: #000; border-top: 1px solid rgba(255,255,255,0.1); }
+        h1 { font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+        h1 span { background: linear-gradient(90deg, var(--accent), var(--accent-dark)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p { max-width: 900px; font-size: 1.4rem; opacity: 0.8; margin-bottom: 40px; font-weight: 300; }
         
-        /* Floating Button */
+        .btn { 
+            background: var(--accent); color: black; padding: 20px 45px; border-radius: 5px; 
+            text-decoration: none; font-weight: bold; transition: 0.4s; display: inline-block; 
+            cursor: pointer; border: none; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(0,242,255,0.4); }
+
+        /* New: AI Advantages Section (Featured at top) */
+        .advantages { background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%); padding: 100px 5%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .adv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .adv-card { padding: 30px; border-radius: 15px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); }
+        .adv-card h4 { color: var(--accent); font-size: 1.4rem; margin-bottom: 15px; }
+        .adv-card p { opacity: 0.7; font-size: 1rem; }
+
+        /* Standard Sections */
+        section { padding: 100px 5%; max-width: 1400px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 60px; font-size: 3rem; font-weight: 800; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        
+        .card { 
+            background: var(--card-bg); padding: 50px; border-radius: 10px; 
+            border: 1px solid rgba(255,255,255,0.05); transition: 0.4s;
+        }
+        .card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 10px 40px var(--glow); }
+
+        .expert-box { background: rgba(255,255,255,0.02); border-radius: 20px; padding: 60px; border: 1px solid rgba(255,255,255,0.05); text-align: center; }
+
+        /* RTL */
+        [dir="rtl"] { text-align: right; }
+        [dir="rtl"] .nav-links { flex-direction: row-reverse; }
+
+        footer { padding: 80px 5%; background: #000; border-top: 1px solid rgba(255,255,255,0.1); }
         .floating-btn {
             position: fixed; bottom: 30px; right: 30px; z-index: 2000;
-            background: var(--accent); color: black; border: none; padding: 15px 30px;
-            border-radius: 50px; font-weight: bold; cursor: pointer;
+            background: var(--accent); color: black; border: none; padding: 18px 35px;
+            border-radius: 5px; font-weight: bold; cursor: pointer;
             box-shadow: 0 10px 30px rgba(0,242,255,0.4);
         }
         [dir="rtl"] .floating-btn { right: auto; left: 30px; }
@@ -70,10 +87,11 @@
 <body>
 
     <nav>
-        <div class="logo"><strong>AISOLUTIOS</strong></div>
+        <div class="logo">AISOLUTIOS</div>
         <div class="nav-links">
+            <a id="m-adv" onclick="scrollToSection('adv')">Avantages</a>
             <a id="m-crew" onclick="scrollToSection('agents')">Crews IA</a>
-            <a id="m-story" onclick="scrollToSection('story')">Vision</a>
+            <a id="m-story" onclick="scrollToSection('story')">Expertise</a>
             <a id="m-book" onclick="scrollToSection('booking')">Booking</a>
         </div>
         <div class="lang-switcher">
@@ -83,56 +101,74 @@
     </nav>
 
     <section class="hero">
-        <h1 id="h-title">IA d'Excellence pour <span>le Secteur Privé & Public</span></h1>
-        <p id="h-sub">Solutions souveraines pour banques, ventes et partis politiques. Nous déployons des agents autonomes pour une croissance stratégique sans précédent.</p>
+        <h1 id="h-title">Architectures d'Agents IA <span>Souveraines</span></h1>
+        <p id="h-sub">Dr. Sidi Weiss déploie des "AI Crews" autonomes pour redéfinir la performance des banques et des organisations politiques.</p>
         <a onclick="scrollToSection('booking')" class="btn" id="h-btn">Session Stratégique</a>
+    </section>
+
+    <section id="adv" class="advantages">
+        <h2 class="section-title" id="adv-title">Pourquoi les <span>Crews IA ?</span></h2>
+        <div class="adv-grid">
+            <div class="adv-card">
+                <h4 id="adv1-h">Autonomie Décisionnelle</h4>
+                <p id="adv1-p">Contrairement aux chatbots passifs, nos agents analysent, raisonnent et exécutent des missions complexes sans supervision constante.</p>
+            </div>
+            <div class="adv-card">
+                <h4 id="adv2-h">Souveraineté des Données</h4>
+                <p id="adv2-p">Solutions conçues pour le secteur bancaire et politique : vos données restent dans votre infrastructure. Sécurité et conformité totale.</p>
+            </div>
+            <div class="adv-card">
+                <h4 id="adv3-h">Scalabilité Infinie</h4>
+                <p id="adv3-p">Une "Crew" peut traiter des milliers de requêtes KYC ou analyser des millions d'interactions électorales en temps réel, 24h/24.</p>
+            </div>
+            <div class="adv-card">
+                <h4 id="adv4-h">Réduction Drastique des Coûts</h4>
+                <p id="adv4-p">Automatisez jusqu'à 80% des processus métier répétitifs et permettez à vos experts de se concentrer sur la haute stratégie.</p>
+            </div>
+        </div>
     </section>
 
     <section id="agents">
         <h2 class="section-title" id="ki-title">Solutions <span>Agentiques</span></h2>
         <div class="grid">
             <div class="card">
-                <h3 id="c1-h">Acquisition & Sales</h3>
-                <p id="c1-p">Agents spécialisés dans la génération de leads B2B et l'automatisation complète des cycles de vente complexes.</p>
+                <h3 id="c1-h">Crews de Vente</h3>
+                <p id="c1-p">Génération de leads et cycles de vente B2B gérés par des essaims d'agents spécialisés.</p>
             </div>
             <div class="card">
-                <h3 id="c2-h">Banques & Finance</h3>
-                <p id="c2-p">Optimisation de l'acquisition client, KYC automatisé et agents de conformité pour institutions financières.</p>
+                <h3 id="c2-h">Finance & Compliance</h3>
+                <p id="c2-p">Automatisation KYC/AML et analyse de risques avec une précision mathématique certifiée.</p>
             </div>
             <div class="card">
-                <h3 id="c3-h">Partis Politiques</h3>
-                <p id="c3-p">Recrutement automatisé de membres, analyse de sentiment des électeurs et campagnes d'engagement souveraines.</p>
+                <h3 id="c3-h">Gouvernance & Politique</h3>
+                <p id="c3-p">Analyse de sentiment et mobilisation citoyenne via des architectures d'agents souveraines.</p>
             </div>
         </div>
     </section>
 
-    <section id="story" style="background: rgba(255,255,255,0.02);">
-        <div style="max-width: 900px; margin: 0 auto;">
-            <h2 id="st-title">Dr. Sidi Weiss – <span>Architecte IA</span></h2>
-            <p id="st-p" style="font-size: 1.2rem; opacity: 0.8; margin-top: 20px;">
-                Du Sahara aux sommets de la Tech européenne. Le Dr Sidi Weiss conçoit des stratégies IA pour les leaders mondiaux. Aujourd'hui, il apporte la puissance des Crew AI aux secteurs les plus exigeants.
+    <section id="story">
+        <div class="expert-box">
+            <h2 id="st-title">Dr. Sidi Weiss – <span>Expert en IA</span></h2>
+            <p id="st-p" style="font-size: 1.3rem; opacity: 0.9; margin-top: 30px; font-weight: 300;">
+                Architecte de solutions cognitives complexes, le Dr Sidi Weiss combine rigueur académique et expertise terrain pour transformer l'IA en un actif stratégique.
             </p>
         </div>
     </section>
 
     <section id="booking">
         <h2 class="section-title" id="bk-title">Réserver une Session</h2>
-        <div class="calendly-inline-widget" data-url="https://calendly.com/vertrieb-aisolutios/30min" style="min-width:320px;height:700px;"></div>
+        <div class="calendly-inline-widget" data-url="https://calendly.com/vertrieb-aisolutios/new-meeting" style="min-width:320px;height:700px;"></div>
     </section>
 
-    <footer style="padding: 60px 5%; background: rgba(0,0,0,0.9); border-top: 1px solid rgba(255,255,255,0.1);">
+    <footer>
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
             <div>
                 <strong style="color:var(--accent);">AISOLUTIOS</strong>
-                <p style="font-size: 14px; opacity: 0.7;">Dr. Sidi Weiss<br>Obere Waiblinger Str. 147a<br>70374 Stuttgart</p>
+                <p style="font-size: 14px; opacity: 0.7; margin-top: 15px;">Dr. Sidi Weiss<br>70374 Stuttgart</p>
             </div>
             <div>
-                <strong id="f-contact">Contact</strong>
-                <p style="font-size: 14px; opacity: 0.7;">
-                    vertrieb@aisolutios.de<br>
-                    00 49 176 31591931<br>
-                    www.aisolutios.de
-                </p>
+                <strong id="f-contact">Contact Direct</strong>
+                <p style="font-size: 14px; opacity: 0.7; margin-top: 15px;">vertrieb@aisolutios.de<br>00 49 176 31591931</p>
             </div>
         </div>
     </footer>
@@ -144,55 +180,71 @@
     <script>
         const trans = {
             ar: {
-                mCrew: "طواقم الذكاء الاصطناعي", mStory: "الرؤية", mBook: "الحجز",
-                hTitle: "ذكاء اصطناعي فائق <span>للقطاعات الحيوية</span>",
-                hSub: "حلول سيادية للبنوك والمبيعات والأحزاب السياسية. نحن نوظف الوكلاء المستقلين لتحقيق نمو استراتيجي غير مسبوق.",
+                mAdv: "المزايا", mCrew: "طواقم العمل", mStory: "الخبير", mBook: "حجز موعد",
+                hTitle: "بنية وكلاء الذكاء الاصطناعي <span>السيادية</span>",
+                hSub: "الدكتور سيدي ويس ينشر طواقم (Crews) مستقلة لإعادة تعريف الأداء في البنوك والمنظمات السياسية.",
                 hBtn: "جلسة استراتيجية",
+                advTitle: "لماذا <span>طواقم الذكاء الاصطناعي؟</span>",
+                adv1H: "استقلالية القرار",
+                adv1P: "على عكس برامج الدردشة البسيطة، يقوم وكلاؤنا بالتحليل والاستنتاج وتنفيذ المهام المعقدة دون إشراف مستمر.",
+                adv2H: "سيادة البيانات",
+                adv2P: "حلول مصممة للقطاعات البنكية والسياسية: بياناتكم تبقى في بنيتكم التحتية. أمان وامتثال كامل.",
+                adv3H: "قابلية توسع هائلة",
+                adv3P: "يمكن لـ 'Crew' معالجة آلاف طلبات KYC أو تحليل ملايين التفاعلات الانتخابية في الوقت الفعلي، 24/7.",
+                adv4H: "خفض هائل للتكاليف",
+                adv4P: "أتمتة ما يصل إلى 80% من العمليات الروتينية، مما يتيح لخبرائك التركيز على الاستراتيجيات العليا.",
                 kiTitle: "الحلول <span>الذكية</span>",
-                c1H: "المبيعات والاستحواذ",
-                c1P: "وكلاء متخصصون في جلب العملاء المحتملين وأتمتة دورات المبيعات المعقدة بالكامل.",
-                c2H: "البنوك والتمويل",
-                c2P: "تحسين استقطاب العملاء، أتمتة إجراءات التحقق (KYC) ووكلاء الامتثال للمؤسسات المالية.",
-                c3H: "الأحزاب السياسية",
-                c3P: "أتمتة استقطاب الأعضاء، تحليل آراء الناخبين وإدارة حملات المشاركة السياسية السيادية.",
-                stTitle: "د. سيدي ويس – <span>مهندس الذكاء الاصطناعي</span>",
-                stP: "من رمال الصحراء إلى قمة التكنولوجيا الأوروبية. يصمم الدكتور سيدي ويس استراتيجيات الذكاء الاصطناعي لقادة العالم. اليوم، يضع قوة طواقم العمل المستقلة في خدمة القطاعات الأكثر تطلباً.",
-                bkTitle: "حجز جلسة استراتيجية",
-                fContact: "اتصل بنا",
-                floatBtn: "احجز الآن"
+                c1H: "طواقم المبيعات", c1P: "إدارة دورات المبيعات B2B عبر أسراب من الوكلاء المتخصصين.",
+                c2H: "المالية والامتثال", c2P: "أتمتة KYC/AML وتحليل المخاطر بدقة رياضية معتمدة.",
+                c3H: "الحوكمة والسياسة", c3P: "تحليل المشاعر وتعبئة المواطنين عبر بنى تحتية سيادية للوكلاء.",
+                stTitle: "د. سيدي ويس – <span>خبير الذكاء الاصطناعي</span>",
+                stP: "كمهندس للحلول المعرفية المعقدة، يجمع الدكتور سيدي ويس بين الصرامة الأكاديمية والخبرة الميدانية لتحويل الذكاء الاصطناعي إلى أصل استراتيجي.",
+                bkTitle: "حجز جلسة مع الخبير", fContact: "اتصال مباشر", floatBtn: "احجز الآن"
             },
             fr: {
-                mCrew: "Crews IA", mStory: "Vision", mBook: "Booking",
-                hTitle: "IA d'Excellence pour <span>le Secteur Privé & Public</span>",
-                hSub: "Solutions souveraines pour banques, ventes et partis politiques. Nous déployons des agents autonomes pour une croissance stratégique.",
+                mAdv: "Avantages", mCrew: "Crews IA", mStory: "Expertise", mBook: "Booking",
+                hTitle: "Architectures d'Agents IA <span>Souveraines</span>",
+                hSub: "Dr. Sidi Weiss déploie des 'AI Crews' autonomes pour redéfinir la performance des banques et de la politique.",
                 hBtn: "Session Stratégique",
+                advTitle: "Pourquoi les <span>Crews IA ?</span>",
+                adv1H: "Autonomie Décisionnelle",
+                adv1P: "Nos agents analysent, raisonnent et exécutent des missions complexes sans supervision constante.",
+                adv2H: "Souveraineté des Données",
+                adv2P: "Vos données restent dans votre infrastructure. Sécurité et conformité totale pour banques et politique.",
+                adv3H: "Scalabilité Infinie",
+                adv3P: "Traitez des milliers de KYC ou analysez des millions d'interactions en temps réel, 24h/24.",
+                adv4H: "Réduction des Coûts",
+                adv4P: "Automatisez 80% des processus métier et concentrez-vous sur la haute stratégie.",
                 kiTitle: "Solutions <span>Agentiques</span>",
-                c1H: "Acquisition & Sales",
-                c1P: "Agents spécialisés dans la génération de leads B2B et l'automatisation complète des cycles de vente complexes.",
-                c2H: "Banques & Finance",
-                c2P: "Optimisation de l'acquisition client, KYC automatisé et agents de conformité pour institutions financières.",
-                c3H: "Partis Politiques",
-                c3P: "Recrutement automatisé de membres, analyse de sentiment des électeurs et campagnes d'engagement souveraines.",
-                stTitle: "Dr. Sidi Weiss – <span>Architecte IA</span>",
-                stP: "Du Sahara aux sommets de la Tech européenne. Le Dr Sidi Weiss conçoit des stratégies IA pour les leaders mondiaux.",
-                bkTitle: "Réserver une Session",
-                fContact: "Contact",
-                floatBtn: "Réserver"
+                c1H: "Crews de Vente", c1P: "Génération de leads et cycles de vente B2B gérés par des agents experts.",
+                c2H: "Finance & Compliance", c2P: "Automatisation KYC/AML et analyse de risques avec précision mathématique.",
+                c3H: "Gouvernance & Politique", c3P: "Analyse de sentiment et mobilisation citoyenne souveraine.",
+                stTitle: "Dr. Sidi Weiss – <span>Expert en IA</span>",
+                stP: "Le Dr Sidi Weiss combine rigueur académique et expertise terrain pour transformer l'IA en actif stratégique.",
+                bkTitle: "Réserver une Session", fContact: "Contact Direct", floatBtn: "Réserver"
             }
         };
 
         function setLanguage(lang) {
             const l = lang.toLowerCase();
             const s = trans[l];
-
             document.body.dir = (l === 'ar') ? 'rtl' : 'ltr';
-
+            document.getElementById('m-adv').innerText = s.mAdv;
             document.getElementById('m-crew').innerText = s.mCrew;
             document.getElementById('m-story').innerText = s.mStory;
             document.getElementById('m-book').innerText = s.mBook;
             document.getElementById('h-title').innerHTML = s.hTitle;
             document.getElementById('h-sub').innerText = s.hSub;
             document.getElementById('h-btn').innerText = s.hBtn;
+            document.getElementById('adv-title').innerHTML = s.advTitle;
+            document.getElementById('adv1-h').innerText = s.adv1H;
+            document.getElementById('adv1-p').innerText = s.adv1P;
+            document.getElementById('adv2-h').innerText = s.adv2H;
+            document.getElementById('adv2-p').innerText = s.adv2P;
+            document.getElementById('adv3-h').innerText = s.adv3H;
+            document.getElementById('adv3-p').innerText = s.adv3P;
+            document.getElementById('adv4-h').innerText = s.adv4H;
+            document.getElementById('adv4-p').innerText = s.adv4P;
             document.getElementById('ki-title').innerHTML = s.kiTitle;
             document.getElementById('c1-h').innerText = s.c1H;
             document.getElementById('c1-p').innerText = s.c1P;
@@ -209,17 +261,12 @@
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.toggle('active', btn.innerText === lang);
             });
-
             localStorage.setItem('ais_lang', l);
         }
 
         function scrollToSection(id) {
             const el = document.getElementById(id);
-            if (el) {
-                const offset = 90;
-                const pos = el.getBoundingClientRect().top + window.pageYOffset - offset;
-                window.scrollTo({ top: pos, behavior: 'smooth' });
-            }
+            if (el) window.scrollTo({ top: el.offsetTop - 90, behavior: 'smooth' });
         }
 
         window.onload = () => {
@@ -227,6 +274,5 @@
             setLanguage(saved.toUpperCase());
         };
     </script>
-
 </body>
 </html>
