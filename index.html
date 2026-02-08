@@ -16,7 +16,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+        body { background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; transition: all 0.3s ease; }
 
         /* Navigation */
         nav { 
@@ -35,7 +35,7 @@
 
         /* Hero */
         .hero { 
-            height: 90vh; display: flex; flex-direction: column; justify-content: center; 
+            height: 85vh; display: flex; flex-direction: column; justify-content: center; 
             align-items: center; text-align: center; padding: 0 5%;
             background: radial-gradient(circle at center, #111 0%, #050505 100%);
         }
@@ -50,12 +50,12 @@
         }
         .btn:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(0,242,255,0.4); }
 
-        /* New: AI Advantages Section (Featured at top) */
-        .advantages { background: linear-gradient(180deg, #050505 0%, #0a0a0a 100%); padding: 100px 5%; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        /* AI Advantages - Highly Detailed & Academic-Professional */
+        .advantages { background: #080808; padding: 100px 5%; border-top: 1px solid rgba(255,255,255,0.05); }
         .adv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
-        .adv-card { padding: 30px; border-radius: 15px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); }
-        .adv-card h4 { color: var(--accent); font-size: 1.4rem; margin-bottom: 15px; }
-        .adv-card p { opacity: 0.7; font-size: 1rem; }
+        .adv-card { padding: 40px; border-radius: 10px; background: rgba(255,255,255,0.02); border-left: 3px solid var(--accent); }
+        .adv-card h4 { color: var(--accent); font-size: 1.3rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+        .adv-card p { opacity: 0.7; font-size: 1.05rem; font-weight: 300; }
 
         /* Standard Sections */
         section { padding: 100px 5%; max-width: 1400px; margin: 0 auto; }
@@ -67,13 +67,11 @@
             border: 1px solid rgba(255,255,255,0.05); transition: 0.4s;
         }
         .card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 10px 40px var(--glow); }
+        .card h3 { color: var(--accent); margin-bottom: 20px; font-size: 1.8rem; }
 
         .expert-box { background: rgba(255,255,255,0.02); border-radius: 20px; padding: 60px; border: 1px solid rgba(255,255,255,0.05); text-align: center; }
 
-        /* RTL */
-        [dir="rtl"] { text-align: right; }
-        [dir="rtl"] .nav-links { flex-direction: row-reverse; }
-
+        /* Footer */
         footer { padding: 80px 5%; background: #000; border-top: 1px solid rgba(255,255,255,0.1); }
         .floating-btn {
             position: fixed; bottom: 30px; right: 30px; z-index: 2000;
@@ -81,6 +79,11 @@
             border-radius: 5px; font-weight: bold; cursor: pointer;
             box-shadow: 0 10px 30px rgba(0,242,255,0.4);
         }
+
+        /* RTL */
+        [dir="rtl"] { text-align: right; }
+        [dir="rtl"] .nav-links { flex-direction: row-reverse; }
+        [dir="rtl"] .adv-card { border-left: none; border-right: 3px solid var(--accent); }
         [dir="rtl"] .floating-btn { right: auto; left: 30px; }
     </style>
 </head>
@@ -102,28 +105,28 @@
 
     <section class="hero">
         <h1 id="h-title">Architectures d'Agents IA <span>Souveraines</span></h1>
-        <p id="h-sub">Dr. Sidi Weiss déploie des "AI Crews" autonomes pour redéfinir la performance des banques et des organisations politiques.</p>
+        <p id="h-sub">Dr. Sidi Weiss – Expert en IA. Nous déployons des "Crews" d'agents autonomes pour les banques, la finance et les institutions politiques.</p>
         <a onclick="scrollToSection('booking')" class="btn" id="h-btn">Session Stratégique</a>
     </section>
 
     <section id="adv" class="advantages">
-        <h2 class="section-title" id="adv-title">Pourquoi les <span>Crews IA ?</span></h2>
+        <h2 class="section-title" id="adv-title">L'Avantage <span>Stratégique de l'IA</span></h2>
         <div class="adv-grid">
             <div class="adv-card">
-                <h4 id="adv1-h">Autonomie Décisionnelle</h4>
-                <p id="adv1-p">Contrairement aux chatbots passifs, nos agents analysent, raisonnent et exécutent des missions complexes sans supervision constante.</p>
+                <h4 id="adv1-h">Autonomie Cognitive</h4>
+                <p id="adv1-p">Nos agents ne se contentent pas de répondre ; ils raisonnent. Ils exécutent des flux de travail entiers, de l'analyse de données à la prise de décision opérationnelle.</p>
             </div>
             <div class="adv-card">
-                <h4 id="adv2-h">Souveraineté des Données</h4>
-                <p id="adv2-p">Solutions conçues pour le secteur bancaire et politique : vos données restent dans votre infrastructure. Sécurité et conformité totale.</p>
+                <h4 id="adv2-h">Souveraineté Numérique</h4>
+                <p id="adv2-p">Indépendance vis-à-vis des tiers. Nous installons des solutions privées sécurisées garantissant que vos données sensibles ne quittent jamais votre infrastructure.</p>
             </div>
             <div class="adv-card">
-                <h4 id="adv3-h">Scalabilité Infinie</h4>
-                <p id="adv3-p">Une "Crew" peut traiter des milliers de requêtes KYC ou analyser des millions d'interactions électorales en temps réel, 24h/24.</p>
+                <h4 id="adv3-h">Précision Mathématique</h4>
+                <p id="adv3-p">Éliminez l'erreur humaine dans les processus critiques (KYC, Risk Management). Nos architectures garantissent une exécution logique et rigoureuse.</p>
             </div>
             <div class="adv-card">
-                <h4 id="adv4-h">Réduction Drastique des Coûts</h4>
-                <p id="adv4-p">Automatisez jusqu'à 80% des processus métier répétitifs et permettez à vos experts de se concentrer sur la haute stratégie.</p>
+                <h4 id="adv4-h">Efficacité Décuplée</h4>
+                <p id="adv4-p">Réduisez vos coûts opérationnels jusqu'à 70% en déléguant les tâches répétitives à des Crews IA qui travaillent 24/7 sans interruption.</p>
             </div>
         </div>
     </section>
@@ -133,30 +136,30 @@
         <div class="grid">
             <div class="card">
                 <h3 id="c1-h">Crews de Vente</h3>
-                <p id="c1-p">Génération de leads et cycles de vente B2B gérés par des essaims d'agents spécialisés.</p>
+                <p id="c1-p">Systèmes multi-agents pour la génération automatique de leads et la clôture de cycles de vente complexes.</p>
             </div>
             <div class="card">
                 <h3 id="c2-h">Finance & Compliance</h3>
-                <p id="c2-p">Automatisation KYC/AML et analyse de risques avec une précision mathématique certifiée.</p>
+                <p id="c2-p">Solutions souveraines pour l'automatisation du KYC, de l'AML et de la conformité réglementaire.</p>
             </div>
             <div class="card">
                 <h3 id="c3-h">Gouvernance & Politique</h3>
-                <p id="c3-p">Analyse de sentiment et mobilisation citoyenne via des architectures d'agents souveraines.</p>
+                <p id="c3-p">Analyse de données citoyennes et gestion stratégique de campagnes via des agents IA sécurisés.</p>
             </div>
         </div>
     </section>
 
     <section id="story">
         <div class="expert-box">
-            <h2 id="st-title">Dr. Sidi Weiss – <span>Expert en IA</span></h2>
+            <h2 id="st-title">Dr. Sidi Weiss – <span>Visionnaire IA</span></h2>
             <p id="st-p" style="font-size: 1.3rem; opacity: 0.9; margin-top: 30px; font-weight: 300;">
-                Architecte de solutions cognitives complexes, le Dr Sidi Weiss combine rigueur académique et expertise terrain pour transformer l'IA en un actif stratégique.
+                En tant que Docteur et expert en IA, je conçois des systèmes où l'intelligence n'est plus un outil, mais un collaborateur autonome. Mon approche garantit performance, sécurité et innovation radicale.
             </p>
         </div>
     </section>
 
     <section id="booking">
-        <h2 class="section-title" id="bk-title">Réserver une Session</h2>
+        <h2 class="section-title" id="bk-title">Prendre l'Avantage Technologique</h2>
         <div class="calendly-inline-widget" data-url="https://calendly.com/vertrieb-aisolutios/new-meeting" style="min-width:320px;height:700px;"></div>
     </section>
 
@@ -164,10 +167,10 @@
         <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
             <div>
                 <strong style="color:var(--accent);">AISOLUTIOS</strong>
-                <p style="font-size: 14px; opacity: 0.7; margin-top: 15px;">Dr. Sidi Weiss<br>70374 Stuttgart</p>
+                <p style="font-size: 14px; opacity: 0.7; margin-top: 15px;">Dr. Sidi Weiss<br>Stuttgart, Germany</p>
             </div>
             <div>
-                <strong id="f-contact">Contact Direct</strong>
+                <strong id="f-contact">Contact</strong>
                 <p style="font-size: 14px; opacity: 0.7; margin-top: 15px;">vertrieb@aisolutios.de<br>00 49 176 31591931</p>
             </div>
         </div>
@@ -180,48 +183,48 @@
     <script>
         const trans = {
             ar: {
-                mAdv: "المزايا", mCrew: "طواقم العمل", mStory: "الخبير", mBook: "حجز موعد",
+                mAdv: "المزايا", mCrew: "طواقم العمل", mStory: "الخبير", mBook: "حجز",
                 hTitle: "بنية وكلاء الذكاء الاصطناعي <span>السيادية</span>",
-                hSub: "الدكتور سيدي ويس ينشر طواقم (Crews) مستقلة لإعادة تعريف الأداء في البنوك والمنظمات السياسية.",
+                hSub: "د. سيدي ويس – خبير ذكاء اصطناعي. نحن ننشر طواقم مستقلة للبنوك، المالية، والمؤسسات السياسية.",
                 hBtn: "جلسة استراتيجية",
-                advTitle: "لماذا <span>طواقم الذكاء الاصطناعي؟</span>",
-                adv1H: "استقلالية القرار",
-                adv1P: "على عكس برامج الدردشة البسيطة، يقوم وكلاؤنا بالتحليل والاستنتاج وتنفيذ المهام المعقدة دون إشراف مستمر.",
-                adv2H: "سيادة البيانات",
-                adv2P: "حلول مصممة للقطاعات البنكية والسياسية: بياناتكم تبقى في بنيتكم التحتية. أمان وامتثال كامل.",
-                adv3H: "قابلية توسع هائلة",
-                adv3P: "يمكن لـ 'Crew' معالجة آلاف طلبات KYC أو تحليل ملايين التفاعلات الانتخابية في الوقت الفعلي، 24/7.",
-                adv4H: "خفض هائل للتكاليف",
-                adv4P: "أتمتة ما يصل إلى 80% من العمليات الروتينية، مما يتيح لخبرائك التركيز على الاستراتيجيات العليا.",
+                advTitle: "الميزة <span>الاستراتيجية للذكاء الاصطناعي</span>",
+                adv1H: "الاستقلال المعرفي",
+                adv1P: "وكلاؤنا لا يكتفون بالإجابة؛ بل يفكرون وينفذون سير العمل بالكامل من تحليل البيانات إلى اتخاذ القرار.",
+                adv2H: "السيادة الرقمية",
+                adv2P: "استقلال تام عن الأطراف الخارجية. حلول آمنة تضمن بقاء بياناتكم الحساسة داخل بنيتكم التحتية دائمًا.",
+                adv3H: "الدقة الرياضية",
+                adv3P: "القضاء على الخطأ البشري في العمليات الحرجة مثل إدارة المخاطر وKYC بضمانات منطقية صارمة.",
+                adv4H: "كفاءة مضاعفة",
+                adv4P: "خفض التكاليف التشغيلية بنسبة تصل إلى 70% عبر تفويض المهام المتكررة لطواقم تعمل على مدار الساعة.",
                 kiTitle: "الحلول <span>الذكية</span>",
-                c1H: "طواقم المبيعات", c1P: "إدارة دورات المبيعات B2B عبر أسراب من الوكلاء المتخصصين.",
-                c2H: "المالية والامتثال", c2P: "أتمتة KYC/AML وتحليل المخاطر بدقة رياضية معتمدة.",
-                c3H: "الحوكمة والسياسة", c3P: "تحليل المشاعر وتعبئة المواطنين عبر بنى تحتية سيادية للوكلاء.",
-                stTitle: "د. سيدي ويس – <span>خبير الذكاء الاصطناعي</span>",
-                stP: "كمهندس للحلول المعرفية المعقدة، يجمع الدكتور سيدي ويس بين الصرامة الأكاديمية والخبرة الميدانية لتحويل الذكاء الاصطناعي إلى أصل استراتيجي.",
-                bkTitle: "حجز جلسة مع الخبير", fContact: "اتصال مباشر", floatBtn: "احجز الآن"
+                c1H: "طواقم المبيعات", c1P: "أنظمة متعددة الوكلاء لتوليد العملاء المحتملين وإغلاق صفقات المبيعات المعقدة.",
+                c2H: "المالية والامتثال", c2P: "حلول سيادية لأتمتة إجراءات التحقق والامتثال التنظيمي بدقة فائقة.",
+                c3H: "الحوكمة والسياسة", c3P: "تحليل البيانات الشعبية والإدارة الاستراتيجية للحملات عبر وكلاء مؤمنين.",
+                stTitle: "د. سيدي ويس – <span>رؤية رائدة</span>",
+                stP: "بصفتي دكتور وخبير في الذكاء الاصطناعي، أصمم أنظمة لم يعد فيها الذكاء مجرد أداة، بل شريك مستقل يضمن الأداء والأمن.",
+                bkTitle: "امتلك الأفضلية التكنولوجية", fContact: "اتصال", floatBtn: "احجز الآن"
             },
             fr: {
                 mAdv: "Avantages", mCrew: "Crews IA", mStory: "Expertise", mBook: "Booking",
                 hTitle: "Architectures d'Agents IA <span>Souveraines</span>",
-                hSub: "Dr. Sidi Weiss déploie des 'AI Crews' autonomes pour redéfinir la performance des banques et de la politique.",
+                hSub: "Dr. Sidi Weiss – Expert en IA. Nous déployons des 'Crews' d'agents autonomes pour les banques et la politique.",
                 hBtn: "Session Stratégique",
-                advTitle: "Pourquoi les <span>Crews IA ?</span>",
-                adv1H: "Autonomie Décisionnelle",
-                adv1P: "Nos agents analysent, raisonnent et exécutent des missions complexes sans supervision constante.",
-                adv2H: "Souveraineté des Données",
-                adv2P: "Vos données restent dans votre infrastructure. Sécurité et conformité totale pour banques et politique.",
-                adv3H: "Scalabilité Infinie",
-                adv3P: "Traitez des milliers de KYC ou analysez des millions d'interactions en temps réel, 24h/24.",
-                adv4H: "Réduction des Coûts",
-                adv4P: "Automatisez 80% des processus métier et concentrez-vous sur la haute stratégie.",
+                advTitle: "L'Avantage <span>Stratégique de l'IA</span>",
+                adv1H: "Autonomie Cognitive",
+                adv1P: "Nos agents raisonnent et exécutent des flux de travail entiers, de l'analyse à la décision opérationnelle.",
+                adv2H: "Souveraineté Numérique",
+                adv2P: "Indépendance totale. Vos données sensibles ne quittent jamais votre infrastructure sécurisée.",
+                adv3H: "Précision Mathématique",
+                adv3P: "Éliminez l'erreur humaine dans les processus critiques avec des architectures logiques certifiées.",
+                adv4H: "Efficacité Décuplée",
+                adv4P: "Réduisez vos coûts de 70% avec des Crews IA travaillant 24/7 sans interruption.",
                 kiTitle: "Solutions <span>Agentiques</span>",
-                c1H: "Crews de Vente", c1P: "Génération de leads et cycles de vente B2B gérés par des agents experts.",
-                c2H: "Finance & Compliance", c2P: "Automatisation KYC/AML et analyse de risques avec précision mathématique.",
-                c3H: "Gouvernance & Politique", c3P: "Analyse de sentiment et mobilisation citoyenne souveraine.",
-                stTitle: "Dr. Sidi Weiss – <span>Expert en IA</span>",
-                stP: "Le Dr Sidi Weiss combine rigueur académique et expertise terrain pour transformer l'IA en actif stratégique.",
-                bkTitle: "Réserver une Session", fContact: "Contact Direct", floatBtn: "Réserver"
+                c1H: "Crews de Vente", c1P: "Systèmes multi-agents pour la génération automatique de leads et cycles de vente.",
+                c2H: "Finance & Compliance", c2P: "Automatisation souveraine du KYC, de l'AML et de la conformité réglementaire.",
+                c3H: "Gouvernance & Politique", c3P: "Analyse de données citoyennes et gestion stratégique de campagnes.",
+                stTitle: "Dr. Sidi Weiss – <span>Visionnaire IA</span>",
+                stP: "En tant que Docteur et expert en IA, je conçois des systèmes où l'IA est un collaborateur autonome.",
+                bkTitle: "Prendre l'Avantage Technologique", fContact: "Contact", floatBtn: "Réserver"
             }
         };
 
